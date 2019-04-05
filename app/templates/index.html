@@ -7,8 +7,17 @@
         <h1><bold>Greatest Common Factor Calculator</bold></h1>
         <p>Calculate the GCF of two integers</p>
         <hr>
+        {%  with messages = get_flashed_messages() %}
+        {% if messages %}
+        <ul>
+            {% for message in messages %}
+            <li>{{ message }}</li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+        {% endwith %}
 
-        <form action="" method="get" novalidate>
+        <form action="" method="post" novalidate>
         {{ form.hidden_tag() }}
         <p>
             {{ form.num1.label }}<br>
@@ -19,7 +28,7 @@
             {{ form.num2(size=24) }}
         </p>
         <p>{{ form.result() }}</p>
-        <p>{{ form.reset() }}</p>
+{#        <p>{{ form.reset() }}</p>#}
     </form>
     </body>
 </html>

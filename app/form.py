@@ -7,4 +7,4 @@ class Form(FlaskForm):
     num1 = StringField('First Integer ', validators=[DataRequired()])
     num2 = StringField('Second Integer', validators=[DataRequired()])
     result = SubmitField('Calculate GCF')
-    reset = SubmitField('Clear')
+    #reset = SubmitField('Clear')
