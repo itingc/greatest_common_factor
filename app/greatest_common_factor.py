@@ -4,14 +4,20 @@
 class GreatestCommonFactor:
     def __init__(self, x, y):
         try:
-            x = int(x)
-            y = int(y)
-            if x < 0 or y < 0:
-                raise ValueError("The numbers must be positive integer")
+            x, y = int(x), int(y)
         except:
             raise ValueError("The numbers must be positive integer")
-        self._x = x
-        self._y = y
+
+        if x <= 0 or y <= 0:
+            raise ValueError("The numbers must be positive integer")
+
+        self._x, self._y = x, y
+
+    def get_x(self):
+        return self._x
+
+    def get_y(self):
+        return self._y
 
 
     """ Calculate the greatest common factor of number x and y"""
