@@ -24,4 +24,4 @@ Activate the virtual enviroment:
 
 Start the test:
 
-```$python -m unittest app.test_gcf```
+```$ python -m unittest app.test_gcf```
