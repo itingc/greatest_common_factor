@@ -5,9 +5,5 @@
       <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
       <auth-required>false</auth-required>
     </data-source>
-    <data-source name="gcf [2]" uuid="d1c85c23-cd6f-414d-9f45-409e05bc1abf">
-      <database-info product="" version="" jdbc-version="" driver-name="" driver-version="" dbms="SQLITE" exact-version="0" />
-      <auth-required>false</auth-required>
-    </data-source>
   </component>
 </project>

@@ -5,7 +5,7 @@ from app.gcf import Gcf
 from app.gcf_manager import GcfManager
 
 GCF_DB = 'gcf.sqlite'
-gcf_manager = GcfManager(GCF_DB)
+gcf_manager =GcfManager(GCF_DB)
 
 @app.route('/', methods=['GET', 'POST'])
 def gcf():
@@ -13,7 +13,6 @@ def gcf():
     if form.validate_on_submit():
         try:
             gcf = Gcf(form.num1.data, form.num2.data)
-            gcf_manager.add_gcf(gcf)
             flash(f'GCF = {gcf.calculate_gcf()}')
         except ValueError as e:
             flash(str(e))
