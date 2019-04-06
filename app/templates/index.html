@@ -1,31 +1,33 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-      <title>Greatest Common Factor Calculator</title>
+        <title>Greatest Common Factor Calculator</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     </head>
     <body>
-        <h1><bold>Greatest Common Factor Calculator</bold></h1>
-        <p>Calculate the GCF of two integers</p>
+        <div class="container">
+        <h1>Greatest Common Factor Calculator</h1>
         <hr>
         <!-- print out result -->
         {%  with messages = get_flashed_messages() %}
         {% if messages %}
-            <p>{{messages[0]}}</p>
+            <strong style="color:red;font-size: 20px;">{{messages[0]}}</strong>
         {% endif %}
         {% endwith %}
 
         <form action="" method="post" novalidate>
-        {{ form.hidden_tag() }}
-        <p>
-            {{ form.num1.label }}<br>
-            {{ form.num1(size=24) }}
-        </p>
-        <p>
-            {{ form.num2.label }}<br>
-            {{ form.num2(size=24) }}
-        </p>
-        <p>{{ form.result() }}</p>
-{#        <p>{{ form.reset() }}</p>#}
-    </form>
+            {{ form.hidden_tag() }}
+            <div class="form-group">
+                {{ form.num1.label }}<br>
+                {{ form.num1(class="form-control-sm") }}
+            </div>
+            <div class="form-group">
+                {{ form.num2.label }}<br>
+                {{ form.num2(class="form-control-sm") }}
+            </div>
+            {{ form.result(class="btn btn-primary")}}
+            <a href="{{url_for('gcf') }}"  class="btn btn-primary">Reset</a>
+        </form>
+        </div>
     </body>
 </html>
