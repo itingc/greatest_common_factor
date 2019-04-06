@@ -20,9 +20,6 @@ class GcfManager:
         """ Adds a new point"""
         if gcf is None or not isinstance(gcf, Gcf):
             raise ValueError("Invalid Gcf Object")
-        print(f'haha {gcf.get_x()} type: {type(gcf.get_x())}')
-        print(f'bbb {gcf.get_y() } type: {type(gcf.get_x())}')
-        print(f'abc {gcf.calculate_gcf()} type: {type(gcf.get_x())}')
         session = self._db_session()
         session.add(gcf)
         session.commit()
