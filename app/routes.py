@@ -8,13 +8,13 @@ GCF_DB = 'gcf.sqlite'
 gcf_manager = GcfManager(GCF_DB)
 
 @app.route('/', methods=['GET', 'POST'])
-def gcf():
+def add_gcf():
     form = Form()
     if form.validate_on_submit():
         try:
             gcf = Gcf(form.num1.data, form.num2.data)
             gcf_manager.add_gcf(gcf)
-            flash(f'GCF = {gcf.calculate_gcf()}')
+            # flash(f'GCF = {gcf.calculate_gcf()}')
         except ValueError as e:
             flash(str(e))
     return render_template('index.html', title='Greatest Common Factor', form=form)
