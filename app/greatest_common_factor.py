@@ -1,15 +1,8 @@
-from sqlalchemy import Column, Integer
-from app.base import Base
 
 
-class GcfInput(Base):
-    __tablename__ = "gcf"
-    id = Column(Integer, primary_key=True)
-    x = Column(Integer, nullable=False)
-    y = Column(Integer, nullable=False)
 
+class GreatestCommonFactor:
     def __init__(self, x, y):
-        print(type(x))
         try:
             x, y = int(x), int(y)
         except:
@@ -35,5 +28,4 @@ class GcfInput(Base):
             self._y = temp_x % self._y
 
         return self._x
-
 
