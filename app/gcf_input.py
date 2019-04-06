@@ -2,12 +2,11 @@ from sqlalchemy import Column, Integer
 from app.base import Base
 
 
-class Gcf(Base):
+class GcfInput(Base):
     __tablename__ = "gcf"
     id = Column(Integer, primary_key=True)
     x = Column(Integer, nullable=False)
     y = Column(Integer, nullable=False)
-    gcf = Column(Integer, nullable=False)
 
     def __init__(self, x, y):
         print(type(x))
@@ -36,6 +35,5 @@ class Gcf(Base):
             self._y = temp_x % self._y
 
         return self._x
-
 
 

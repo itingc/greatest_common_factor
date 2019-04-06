@@ -1,6 +1,6 @@
 import math
 from unittest import TestCase
-from app.gcf import GreatestCommonFactor
+from app.gcf_input import GreatestCommonFactor
 
 
 """ Unit Test the functionality of greatest common factor"""
