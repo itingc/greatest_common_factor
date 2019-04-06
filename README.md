@@ -4,19 +4,24 @@ and a simple web UI interface to test.
 
 ## Run with a Browser
 Activate the virtual enviroment:
-'''$ venv\Scripts\activate'''
+
+```$ venv\Scripts\activate```
 
 Start the service:
-'''$ flask run'''
+
+```$ flask run```
 
 Available on URL:
+
 ```http://127.0.0.1:5000```
 
 Test by entering two positive integers.
 
 ## Test the functionality of GCF
 Activate the virtual enviroment:
-'''$ venv\Scripts\activate'''
+
+```$ venv\Scripts\activate```
 
 Start the test:
-python -m unittest app.test_gcf
+
+```$ python -m unittest app.test_gcf```
