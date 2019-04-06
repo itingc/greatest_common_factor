@@ -9,7 +9,7 @@ Activate the virtual enviroment:
 
 Start the service:
 
-```(venv) $ flask run```
+```$ flask run```
 
 Available on URL:
 
@@ -24,4 +24,4 @@ Activate the virtual enviroment:
 
 Start the test:
 
-```(venv) $ python -m unittest app.test_gcf```
+```$ python -m unittest app.test_gcf```
