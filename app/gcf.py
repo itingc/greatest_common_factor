@@ -5,9 +5,9 @@ from app.base import Base
 class Gcf(Base):
     __tablename__ = "gcf"
     id = Column(Integer, primary_key=True)
-    x = Column(Integer)
-    y = Column(Integer)
-    gcf = Column(Integer)
+    x = Column(Integer, nullable=False)
+    y = Column(Integer, nullable=False)
+    gcf = Column(Integer, nullable=False)
 
     def __init__(self, x, y):
         try:
