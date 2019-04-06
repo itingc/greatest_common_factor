@@ -8,7 +8,8 @@ c.execute('''
           CREATE TABLE gcf
           (id INTEGER PRIMARY KEY ASC, 
            x INTEGER NOT NULL,
-           y INTEGER NOT NULL)
+           y INTEGER NOT NULL,
+           gcf INTEGER NOT NULL )
           ''')
 conn.commit()
 conn.close()
