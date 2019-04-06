@@ -19,13 +19,16 @@ class Gcf(Base):
         if x <= 0 or y <= 0:
             raise ValueError("The numbers must be positive integer")
 
-        self._x, self._y = x, y
+        self._x, self._y, self.gcf = x, y, 1
 
     def get_x(self):
         return self._x
 
     def get_y(self):
         return self._y
+
+    def get_gcf(self):
+        return self.gcf
 
 
     """ Calculate the greatest common factor of number x and y"""
@@ -35,7 +38,8 @@ class Gcf(Base):
             self._x = self._y
             self._y = temp_x % self._y
 
-        return self._x
+        self.gcf = self.x
+        return self.gcf
 
 
 
