@@ -6,10 +6,12 @@
         <link rel="stylesheet" type="text/css" href="{{url_for('static', filename='style.css')}}" >
     </head>
     <body>
+
         <div class="container">
         <h1>Greatest Common Factor Calculator</h1>
         <hr>
 
+        <!-- Form for entering two positive integers for gcf -->
         <div class="row">
             <div class="col-sm-4">
             <form action="" method="post" novalidate>
@@ -27,24 +29,26 @@
             </form>
             </div>
 
-            <div class="col-sm-8">
+            <!-- Definition of greatest common factor -->
+            <div class="col-sm-8 card">
+                <div class="card-body">
                 <h2>What is the Greatest Common Factor?</h2>
                 <p>
                     The greatest common factor (GCF or GCD or HCF) of a set of whole numbers
                     is the largest positive integer that divides evenly into all numbers
                     with zero remainder. For example, for the set of numbers 18, 30  the GCF = 6.
                 </p>
+                </div>
             </div>
-
 
              <!-- print out result -->
-            <div class="col-sm-12 mt-5">
             {%  with messages = get_flashed_messages() %}
             {% if messages %}
+            <div class="col-sm-12 mt-5 shadow-lg p-3 bg-white rounded">
                 <strong>{{messages[0]}}</strong>
+            </div>
             {% endif %}
             {% endwith %}
-            </div>
         </div>
         </div>
     </body>
