@@ -7,22 +7,34 @@
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 {#        <script src="{{url_for('static', filename='script.js')}}"></script>#}
         <script>
-            $(document).ready(function () {
-                $('form').on('submit', function (event) {
+            $(function(){
+                $('button').click(function(){
                     $.ajax({
-                            data: {
-                                first_num: $('#num1').val(),
-                                second_num: $('#num2').val(),
-                            },
-                            type: 'POST',
-                            url: '{{url_for('gcf')}}'
-            })
-                    .done(function(data) {
-                        $('#output').text(data.output).show();
-                  });
-                  event.preventDefault();
-                  });
+                        url: '{{url_for('gcf_result')}}',
+                        data: $('form').serialize(),
+                        type: 'POST',
+                        success: function(response) {
+                            console.log(response);
+                        },
+                        error: function(response) {
+                            console.log(response);
+                        }
+                    });
+                    {#$.getJSON({{url_for('gcf_result')}}, function( data ) {#}
+                    {#    var items = [];#}
+                    {#    $.each( data, function( key, val ) {#}
+                    {#        items.push( "<li id='" + key + "'>" + val + "</li>" );#}
+                    {#    });#}
+                    {##}
+                    {#    $( "<ul/>", {#}
+                    {#        "class": "my-new-list",#}
+                    {#        html: items.join( "" )#}
+                    {#    }).appendTo( ".container" );#}
+                    {#});#}
+                });
             });
+
+
         </script>
     </head>
     <body>
@@ -33,19 +45,20 @@
         <!-- Form for entering two positive integers for gcf -->
         <div class="row">
             <div class="col-sm-4">
-            <form action="" method="post" novalidate>
-                {{ form.hidden_tag() }}
+            <form action="{{url_for('gcf')}}" method="post" role="form" novalidate>
+{#                {{ form.hidden_tag() }}#}
                 <div class="form-group">
-                    <input type="text" name="num1" value=5>
+                    <input type="text" name="num1" value=10>
 {#                    {{ form.num1.label }}<br>#}
 {#                    {{ form.num1(class="form-control-sm") }}#}
                 </div>
                 <div class="form-group">
-                    {{ form.num2.label }}<br>
-                    {{ form.num2(class="form-control-sm") }}
+                    <input type="text" name="num2" value=25>
+{#                    {{ form.num2.label }}<br>#}
+{#                    {{ form.num2(class="form-control-sm") }}#}
                 </div>
-                <div id="output"><p>hahaha</p></div>
-                {{ form.result(class="btn btn-primary")}}
+{#                {{ form.result(class="btn btn-primary")}}#}
+                <button class="btn btn-lg btn-primary btn-block" type="button">Calculate GCF</button>
                 <a href="{{url_for('gcf')}}"  class="btn btn-primary">Reset</a>
             </form>
             </div>

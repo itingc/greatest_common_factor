@@ -27,5 +27,5 @@ class GreatestCommonFactor:
             self._x = self._y
             self._y = temp_x % self._y
 
-        return self._x
+        return str(self._x)
 
