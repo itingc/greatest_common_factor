@@ -20,17 +20,6 @@
                             console.log(response);
                         }
                     });
-                    {#$.getJSON({{url_for('gcf_result')}}, function( data ) {#}
-                    {#    var items = [];#}
-                    {#    $.each( data, function( key, val ) {#}
-                    {#        items.push( "<li id='" + key + "'>" + val + "</li>" );#}
-                    {#    });#}
-                    {##}
-                    {#    $( "<ul/>", {#}
-                    {#        "class": "my-new-list",#}
-                    {#        html: items.join( "" )#}
-                    {#    }).appendTo( ".container" );#}
-                    {#});#}
                 });
             });
 
@@ -46,18 +35,12 @@
         <div class="row">
             <div class="col-sm-4">
             <form action="{{url_for('gcf')}}" method="post" role="form" novalidate>
-{#                {{ form.hidden_tag() }}#}
                 <div class="form-group">
                     <input type="text" name="num1" value=10>
-{#                    {{ form.num1.label }}<br>#}
-{#                    {{ form.num1(class="form-control-sm") }}#}
                 </div>
                 <div class="form-group">
                     <input type="text" name="num2" value=25>
-{#                    {{ form.num2.label }}<br>#}
-{#                    {{ form.num2(class="form-control-sm") }}#}
                 </div>
-{#                {{ form.result(class="btn btn-primary")}}#}
                 <button class="btn btn-lg btn-primary btn-block" type="button">Calculate GCF</button>
                 <a href="{{url_for('gcf')}}"  class="btn btn-primary">Reset</a>
             </form>
