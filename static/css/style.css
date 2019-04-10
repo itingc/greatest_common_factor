@@ -1,5 +1,4 @@
 h1 {
-    color: black;
     font-size: 30px;
 }
 
@@ -7,7 +6,7 @@ h2{
     font-size: 24px;
 }
 
-strong{
+#result{
     color: red;
     font-size: 20px;
 }
