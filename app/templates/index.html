@@ -14,7 +14,9 @@
                         data: $('form').serialize(),
                         type: 'POST',
                         success: function(response) {
-                            console.log(response);
+                            //$('#result').html(response);
+                            $('#result').text(response["GCF"]);
+                            console.log(response["GCF"])
                         },
                         error: function(response) {
                             console.log(response);
@@ -22,7 +24,6 @@
                     });
                 });
             });
-
 
         </script>
     </head>
@@ -59,6 +60,7 @@
             </div>
 
              <!-- print out result -->
+            <div id="result">Clike me away!!!</div>
             {%  with messages = get_flashed_messages() %}
             {% if messages %}
             <div class="col-sm-12 mt-5 shadow-lg p-3 bg-white rounded">
